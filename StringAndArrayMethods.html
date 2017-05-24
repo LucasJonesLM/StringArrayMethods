@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FUNctions</title>
+  <script type="text/javascript">
+  function concat(){
+    var arr = arguments;
+    var len = arr.length;
+    var s = "";
+    for(var i = 0; i<len;i++){
+      s += arr[i];
+    }
+    return s;
+  }
+
+  var s = "lucas";
+  var y = "jones";
+  console.log("concat: " + concat(s,y));
+
+  function endsWith(string,endval,subLen){
+    if (subLen != null) {
+      var mainStrLen = subLen;
+    }else {
+      var mainStrLen = string.length;
+    }
+    var testStrLen = endval.length;
+    var mainStr = string.substring(0,mainStrLen)
+    var s = mainStr.substring(mainStrLen-testStrLen);
+    return endval === s;
+  }
+
+  console.log("endsWith: " + endsWith("this string is really long.","str",8));
+
+  function includes(mainStr,testString,startPoint){
+    if (startPoint != null) {
+      var s = startPoint;
+    }else{
+      var s = 0;
+    }
+    var testStrLen = testString.length;
+    var mainStrLen = mainStr.length;
+    for(var i = s;i<mainStrLen;i++){
+      if (testString===mainStr.substring(i,i+testStrLen)) {
+        return true;
+      }
+    }
+    return "String does not exist!";
+  }
+
+  console.log("includes: " + includes("I love the includes function!","love",2));
+
+  function indexOf(mainStr,testString,startPoint){
+    if (startPoint != null) {
+      var s = startPoint;
+    }else{
+      var s = 0;
+    }
+    var testStrLen = testString.length;
+    var mainStrLen = mainStr.length;
+    for(var i = s;i<mainStrLen;i++){
+      if (testString===mainStr.substring(i,i+testStrLen)) {
+        return i;
+      }
+    }
+    return "String does not exist!";
+  }
+
+  console.log("indexOf: " + indexOf("I love the indexOf function!","I"));
+
+  function toUpper(string){
+    var s = "";
+    var len = string.length;
+    for(var i = 0; i<len;i++){
+      var x = string.charCodeAt(i);
+      if (x>96&&x<123) {
+        s += String.fromCharCode(x-32);
+      }else {
+        s += string[i];
+      }
+
+    }
+    return s;
+  }
+  console.log("toUpper: " + toUpper("you can do it!"));
+  function push(){
+      var arr = arguments[0];
+      var arrLen = arr.length;
+      var argsLen = arguments.length;
+      for(var i = 1;i<argsLen;i++){
+        arr[arrLen-1+i] = arguments[i];
+      }
+      return arr;
+  }
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  console.log("push: " + push(fruits, "Grapes","Grapes","Tomatoe"));
+  function concatArray(){
+
+  }
+  console.log("concatArray: " + concatArray("you can do it!"));
+  function join(){
+
+  }
+  console.log("join: " + join("you can do it!"));
+  </script>
+</head>
+<body>
+
+</body>
+</html>
